@@ -47,7 +47,7 @@ export default function Header({ scrolled }: HeaderProps) {
               ))}
             </nav>
 
-            <Link className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 uppercase transition-colors ease-out duration-150 font-mono hover:text-primary/80 hover:bg-primary/20 hover:border border-primary" href="/#sign-in">
+            <Link className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 uppercase transition-colors ease-out duration-150 font-mono hover:text-primary/80 hover:bg-primary/20 hover:border border-primary" href="/auth/login">
               Sign In
             </Link>
           </div>

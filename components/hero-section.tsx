@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section className="flex flex-col h-svh justify-between">
       <GL hovering={hovering} />
-      <div className="bg-background/80 h-svh w-full px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
+      <div className="bg-background/50 h-svh w-full px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:items-center md:place-items-stretch place-items-center h-full">
           {/* Content */}
           <div className="space-y-6">
