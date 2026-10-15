@@ -2,218 +2,113 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { motion, cubicBezier } from "motion/react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronDown } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { ChevronDown, ExternalLink } from "lucide-react"
 
 const roadmapPhases = [
   {
     id: 1,
-    title: "Fundamentos Sólidos",
-    icon: "🏗️",
+    title: "Fundamentos sólidos",
     certImage: "/images/junior-cybersecurity.webp",
-    topics: ["Modelo OSI y TCP/IP", "Linux CLI (Bash)", "Subnetting & DNS", "Virtualización"],
+    topics: ["Modelo OSI y TCP/IP", "Linux CLI (Bash)", "Subnetting y DNS", "Virtualización"],
     searchQueries: "Linux commands, How DNS works, TCP 3-way handshake",
-    platform: "TryHackMe - Pre-Security",
+    platform: "TryHackMe — Pre Security",
+    url: "https://tryhackme.com/path/outline/presecurity",
   },
   {
     id: 2,
-    title: "Scripting y Programación",
-    icon: "🐍",
+    title: "Scripting y programación",
     certImage: "/images/web-exploitation-expert.webp",
-    topics: ["Python para Hacking", "Bash Scripting", "HTML/JS/PHP", "Regular Expressions"],
+    topics: ["Python para hacking", "Bash scripting", "HTML/JS/PHP", "Expresiones regulares"],
     searchQueries: "Python cybersecurity, Bash automation, Regex tutorial",
     platform: "Hack The Box Academy",
+    url: "https://academy.hackthebox.com/",
   },
   {
     id: 3,
-    title: "Web Hacking",
-    icon: "🌐",
+    title: "Seguridad web",
     certImage: "/images/web-exploitation-specialist.webp",
     topics: ["OWASP Top 10", "SQL Injection", "XSS", "Burp Suite"],
     searchQueries: "PortSwigger Web Security, Burp Suite tutorial, OWASP testing",
-    platform: "PortSwigger Academy",
+    platform: "PortSwigger Web Security Academy",
+    url: "https://portswigger.net/web-security",
   },
   {
     id: 4,
-    title: "Infraestructura y Redes",
-    icon: "🔌",
+    title: "Infraestructura y redes",
     certImage: "/images/pentesting-specialist.webp",
-    topics: ["Escaneo (Nmap)", "Metasploit Framework", "Privilege Escalation", "Active Directory"],
+    topics: ["Escaneo con Nmap", "Metasploit Framework", "Escalada de privilegios", "Active Directory"],
     searchQueries: "Nmap cheat sheet, Windows PrivEsc, Active Directory attacks",
-    platform: "Hack The Box Main Track",
+    platform: "Hack The Box — máquinas y laboratorios",
+    url: "https://www.hackthebox.com/",
   },
 ]
+
+const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
 
 export default function RoadmapSection() {
   const [expandedPhase, setExpandedPhase] = useState<number | null>(null)
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: cubicBezier(0.25, 0.46, 0.45, 0.94) },
-    },
-  }
-
-  const contentVariants = {
-    hidden: { opacity: 0, height: 0 },
-    visible: {
-      opacity: 1,
-      height: "auto",
-      transition: { duration: 0.4 },
-    },
-    exit: {
-      opacity: 0,
-      height: 0,
-      transition: { duration: 0.3 },
-    },
-  }
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5 },
-    },
-  }
-
-
   return (
-    <section id="roadmap" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="mb-12 text-center">
-        <h2 className="text-3xl font-bold text-foreground mb-4">Tu Ruta de Estudio</h2>
-        <p className="text-muted-foreground">Sigue estas 4 fases para dominar la ciberseguridad</p>
-      </div>
+    <section id="roadmap" aria-labelledby="roadmap-title" className="border-y border-border bg-card/30">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mb-10 max-w-2xl">
+          <h2 id="roadmap-title" className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Una ruta hacia el pentest</h2>
+          <p className="mt-3 max-w-prose leading-7 text-muted-foreground">Avanza desde los fundamentos hasta las prácticas de evaluación. Abre cada fase para ver los temas y recursos asociados.</p>
+        </div>
 
-      <motion.div
-        className="space-y-4"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        {roadmapPhases.map((phase, index) => (
-          <motion.div key={phase.id} className="relative" variants={cardVariants}>
-            {index !== roadmapPhases.length - 1 && (
-              <div className="absolute left-8 top-20 w-1 h-100 bg-linear-to-b from-primary via-primary to-transparent pointer-events-none" />
-            )}
-
-            <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
-              <Card
-                className={`border-border bg-card/50 backdrop-blur cursor-pointer hover:border-primary/50 transition-all`}
-                onClick={() => { setExpandedPhase(expandedPhase === phase.id ? null : phase.id); }}
-              >
-                <CardHeader className="pb-3">
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, height: 0 },
-                      visible: {
-                        opacity: 1,
-                        height: "auto",
-                        transition: { duration: 0.4 },
-                      },
-                      exit: {
-                        opacity: 0,
-                        height: 0,
-                        transition: { duration: 0.3 },
-                      }
-                    }}
-                    initial="hidden"
-                    animate={expandedPhase === phase.id ? "hidden" : "visible"}
-                    exit="exit"
+        <ol className="divide-y divide-border border-y border-border">
+          {roadmapPhases.map((phase) => {
+            const isExpanded = expandedPhase === phase.id
+            const contentId = `phase-content-${phase.id}`
+            return (
+              <li key={phase.id}>
+                <Card className="overflow-hidden rounded-none border-0 bg-transparent py-0 shadow-none">
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={contentId}
+                    onClick={() => setExpandedPhase(isExpanded ? null : phase.id)}
+                    className="group flex min-h-24 w-full items-center gap-4 px-3 py-4 text-left transition-colors hover:bg-card/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary sm:gap-6 sm:px-5"
                   >
-                    <div className="flex items-start justify-between">
-                      <div className="flex flex-col md:flex-row items-start space-x-4">
-                        <div className={`${expandedPhase === phase.id ? "hidden" : ""} relative w-50 h-50 shrink-0`}>
-                          <Image
-                            src={phase.certImage || "/placeholder.svg"}
-                            alt={`${phase.title} certification`}
-                            fill
-                            className="object-cover rounded-md"
-                          />
-                        </div>
-                        <div className={`${expandedPhase === phase.id ? "hidden" : "relative"} space-y-4`}>
-                          <div className="space-y-2">
-                            <span className="inline-block px-4 py-2 rounded-full border border-primary/50 bg-primary/10 text-primary text-sm font-medium">Fase {phase.id}</span>
-                            <CardTitle className="text-4xl text-foreground">{phase.title}</CardTitle>
-                          </div>
-                          <CardDescription className="mt-1">{phase.platform}</CardDescription>
-                        </div>
+                    <span className="font-mono text-sm tabular-nums text-primary">0{phase.id}</span>
+                    <Image src={`${assetBasePath}${phase.certImage}`} alt="" width={54} height={54} className="size-12 rounded-md object-cover sm:size-14" />
+                    <span className="min-w-0 flex-1">
+                      <span className="block font-display text-lg font-semibold text-foreground sm:text-xl">{phase.title}</span>
+                      <span className="mt-1 block truncate text-sm text-muted-foreground">{phase.platform}</span>
+                    </span>
+                    <ChevronDown aria-hidden="true" size={18} className={`shrink-0 text-primary transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+                  </button>
+
+                  {isExpanded && (
+                    <CardContent id={contentId} className="grid gap-6 border-t border-border px-5 py-6 sm:grid-cols-[minmax(0,0.75fr)_minmax(0,1fr)] sm:px-8 sm:py-8">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Temas de práctica</p>
+                        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                          {phase.topics.map((topic) => (
+                            <li key={topic} className="flex items-start gap-2.5 text-sm leading-6 text-foreground">
+                              <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />{topic}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <motion.div
-                        animate={{ rotate: expandedPhase === phase.id ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-
-                        <ChevronDown
-                          className={`w-5 h-5 text-primary transition-transform`}
-                        />
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                </CardHeader>
-
-                {expandedPhase === phase.id && (
-                  <CardContent className="space-y-4 grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
-                    <motion.div className="relative w-50 h-50 md:w-100 md:h-100 p-4 shrink-0 flex items-center justify-center bg-card/70 backdrop-blur rounded-md" variants={imageVariants} initial="hidden" animate="visible">
-                      <Image
-                        src={phase.certImage || "/placeholder.svg"}
-                        alt={`${phase.title} certification`}
-                        fill
-                        className="object-center drop-shadow-lg rounded-md"
-                      />
-                    </motion.div>
-                    <div className="space-y-4">
-                      <motion.div variants={imageVariants} initial="hidden" animate="visible">
-                        <div className="space-y-2">
-                          <span className="inline-block px-4 py-2 rounded-full border border-primary/50 bg-primary/10 text-primary text-sm font-medium">Fase {phase.id}</span>
-                          <CardTitle className="md:text-4xl text-md text-foreground">{phase.title}</CardTitle>
-                        </div>
-                        <CardDescription className="mt-1">{phase.platform}</CardDescription>
-                      </motion.div>
-                      <motion.div variants={imageVariants} initial="hidden" animate="visible">
-                        <motion.h4 className="font-semibold text-foreground mb-2">Búsquedas Recomendadas:</motion.h4>
-                        <motion.p className="text-muted-foreground text-sm">{phase.searchQueries}</motion.p>
-                      </motion.div>
-
-                      <motion.h4 className="font-semibold text-foreground mb-2">Conceptos Clave:</motion.h4>
-                      <ul className="space-y-2">
-                        {phase.topics.map((topic, idx) => (
-                          <motion.li
-                            key={idx}
-                            className="flex items-center space-x-2 text-muted-foreground"
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.3 }}
-                          >
-                            <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                            <span>{topic}</span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </div>
-
-                  </CardContent>
-                )}
-              </Card>
-            </motion.div>
-          </motion.div>
-        ))}
-      </motion.div>
+                      <div className="border-t border-border pt-5 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-0">
+                        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Recurso recomendado</p>
+                        <a href={phase.url} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                          {phase.platform}<ExternalLink aria-hidden="true" size={14} />
+                          <span className="sr-only"> (se abre en una pestaña nueva)</span>
+                        </a>
+                        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Búsquedas recomendadas</p>
+                        <p className="mt-2 text-sm leading-6 text-foreground">{phase.searchQueries}</p>
+                      </div>
+                    </CardContent>
+                  )}
+                </Card>
+              </li>
+            )
+          })}
+        </ol>
+      </div>
     </section>
   )
 }

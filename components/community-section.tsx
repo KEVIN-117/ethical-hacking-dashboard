@@ -38,21 +38,24 @@ const mindsets = [
 export default function CommunitySection() {
   return (
     <section id="community" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Comunidad y Mentalidad</h2>
+      <div className="mb-10 max-w-2xl">
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Aprender también es compartir</h2>
+        <p className="mt-3 max-w-prose leading-7 text-muted-foreground">Contrasta ideas, aprende de otros y desarrolla el criterio que convierte la práctica en un trabajo responsable.</p>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-12">
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-foreground mb-6">Conecta con la Comunidad</h3>
-          {communities.map((community, index) => {
+          {communities.map((community) => {
             const Icon = community.icon
             return (
               <Card
-                key={index}
+                key={community.name}
                 className="border-border bg-card/50 backdrop-blur hover:border-primary/50 transition-all"
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-start space-x-3">
-                    <Icon className="w-5 h-5 text-primary mt-1 shrink-0" />
+                    <Icon aria-hidden="true" className="w-5 h-5 text-primary mt-1 shrink-0" />
                     <div>
                       <CardTitle className="text-base text-foreground">{community.name}</CardTitle>
                       <CardDescription className="mt-1 text-foreground/70">{community.description}</CardDescription>
@@ -66,10 +69,10 @@ export default function CommunitySection() {
 
         <div className="space-y-4">
           <h3 className="text-2xl font-bold text-foreground mb-6">Mentalidad de Estudio</h3>
-          {mindsets.map((mindset, index) => (
-            <Card key={index} className="border-secondary bg-secondary/10 backdrop-blur">
+          {mindsets.map((mindset) => (
+            <Card key={mindset.title} className="border-border bg-card/60">
               <CardHeader className="pb-3">
-                <CardTitle className="text-base text-secondary">{mindset.title}</CardTitle>
+                <CardTitle className="text-base text-primary">{mindset.title}</CardTitle>
                 <CardDescription className="mt-2 text-foreground/70">{mindset.description}</CardDescription>
               </CardHeader>
             </Card>

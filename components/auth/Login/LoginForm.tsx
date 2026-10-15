@@ -9,7 +9,7 @@ export function LoginForm() {
         <section className='bg-background/50 h-svh w-full px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10'>
             <div className='w-[70vw] flex mx-auto bg-background/70 p-8 rounded-lg shadow-lg gap-6 overflow-y-auto place-items-center'>
                 <Image
-                    src="/images/active-directory-expert.webp"
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/active-directory-expert.webp`}
                     alt="Login Illustration"
                     width={300}
                     height={300}

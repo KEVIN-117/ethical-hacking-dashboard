@@ -48,7 +48,7 @@ const resources = [
     type: ["spanish", "video"],
     description: "Comunidad y cursos en español de alta calidad. Muy accesible.",
     cost: "Freemium",
-    tags: ["Español", "YouTube", "Community"],
+    tags: ["Español", "YouTube", "Comunidad"],
     url: "https://hack4u.io",
     icon: "/images/junior-cybersecurity.webp",
   },
@@ -63,6 +63,8 @@ const resources = [
   },
 ]
 
+const assetBasePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 export default function ResourcesSection() {
   const [filter, setFilter] = useState<string>("all")
 
@@ -70,16 +72,19 @@ export default function ResourcesSection() {
 
   return (
     <section id="resources" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-foreground mb-2">Plataformas Recomendadas</h2>
-        <p className="text-muted-foreground mb-6">Selecciona el tipo de aprendizaje que mejor se adapte a ti</p>
+      <div className="mb-10 max-w-2xl">
+        <h2 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Laboratorios para practicar</h2>
+        <p className="mt-3 mb-6 max-w-prose leading-7 text-muted-foreground">Explora las plataformas por formato y encuentra un entorno autorizado para poner en práctica cada tema.</p>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar plataformas de aprendizaje">
           {[
             { value: "all", label: "Todas" },
             { value: "beginner", label: "Para Principiantes" },
             { value: "practical", label: "Práctica / CTF" },
             { value: "theory", label: "Teoría / Cursos" },
+            { value: "web", label: "Seguridad web" },
+            { value: "video", label: "Cursos en video" },
+            { value: "professional", label: "Nivel profesional" },
             { value: "spanish", label: "En Español" },
           ].map((f) => (
             <motion.button
@@ -90,6 +95,7 @@ export default function ResourcesSection() {
                 transition: { type: "inertia", stiffness: 500, damping: 50 },
               }}
               onClick={() => setFilter(f.value)}
+              aria-pressed={filter === f.value}
               className={`px-4 py-2 rounded-lg font-medium transition-all ${filter === f.value
                 ? "bg-primary text-primary-foreground"
                 : "bg-card border border-border text-muted-foreground hover:border-primary/50"
@@ -110,16 +116,17 @@ export default function ResourcesSection() {
           transition={{ duration: 0.2 }}
         >
 
+          <p className="sr-only" role="status" aria-live="polite">{filtered.length} plataformas disponibles</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((resource, index) => (
               <Card
                 key={index}
                 className="border-border bg-card/50 backdrop-blur hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/20 flex flex-col pt-0"
               >
-                <div className="relative h-70 w-full bg-linear-to-b from-primary/10 via-primary/5 to-transparent rounded-t-lg flex items-center justify-center p-4">
+                <div className="relative h-32 w-full rounded-t-lg bg-linear-to-b from-primary/10 via-primary/5 to-transparent p-3">
                   <Image
-                    src={resource.icon || "/placeholder.svg"}
-                    alt={`${resource.name} icon`}
+                    src={`${assetBasePath}${resource.icon || "/placeholder.svg"}`}
+                    alt=""
                     fill
                     className="object-contain drop-shadow-lg"
                   />
@@ -128,7 +135,7 @@ export default function ResourcesSection() {
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
                     <CardTitle className="text-lg text-foreground">{resource.name}</CardTitle>
-                    <ExternalLink className="w-4 h-4 text-primary" />
+                    <ExternalLink aria-hidden="true" className="w-4 h-4 shrink-0 text-primary" />
                   </div>
                   <CardDescription className="text-sm text-muted-foreground">{resource.cost}</CardDescription>
                 </CardHeader>
@@ -149,9 +156,10 @@ export default function ResourcesSection() {
                     href={resource.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visitar ${resource.name} (se abre en una pestaña nueva)`}
                     className="inline-block w-full text-center px-4 py-2 bg-primary/20 border border-primary text-primary rounded-lg font-medium hover:bg-primary/30 transition-colors mt-auto"
                   >
-                    Visitar Plataforma
+                    Visitar plataforma <ExternalLink aria-hidden="true" className="ml-1 inline size-3.5" />
                   </a>
                 </CardContent>
               </Card>
