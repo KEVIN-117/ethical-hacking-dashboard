@@ -1,5 +1,11 @@
 ---
 title: "Ética en OSINT"
+description: "Marco práctico para definir propósito, autorización, proporcionalidad, minimización de datos y responsabilidad en investigaciones OSINT."
+tags:
+  - osint
+  - etica
+  - legal
+  - uso-responsable
 ---
 
 # Ética en OSINT
@@ -485,6 +491,8 @@ OSINT es una herramienta poderosa para seguridad, investigación y cumplimiento.
 ---
 
 ## 🚀 Próximos Pasos
+
+Comienza con la [ruta de aprendizaje OSINT](00_OSINT_Learning_Path.md) y aplica estos criterios de alcance, autorización y minimización en cada etapa.
 
 ```
 1. Completa todos los módulos de la ruta

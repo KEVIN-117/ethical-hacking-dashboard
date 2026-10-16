@@ -1,5 +1,11 @@
 ---
 title: "Buscadores alternativos"
+description: "Compara buscadores generales y especializados y combina sus índices para ampliar la cobertura de una investigación OSINT."
+tags:
+  - osint
+  - buscadores
+  - reconocimiento
+  - fuentes-abiertas
 ---
 
 # Buscadores alternativos
@@ -130,13 +136,9 @@ site:empresa.com "api key"
 **Casos de uso OSINT**:
 
 ```
-# Buscadores alternativos
 cgi-bin/admin
-# Buscadores alternativos
 type:router
-# Buscadores alternativos
 Apache/2.4
-# Buscadores alternativos
 country:US
 ```
 
@@ -158,11 +160,8 @@ country:US
 **Búsquedas**:
 
 ```
-# Buscadores alternativos
 "empresa.com"
-# Buscadores alternativos
 parsed.names: empresa.com
-# Buscadores alternativos
 autonomous_system.name: "Microsoft"
 ```
 
@@ -247,7 +246,6 @@ DuckDuckGo: site:empresa.com intitle:admin
 ### Osintgram (para Instagram - Paso 6)
 
 ```bash
-# Buscadores alternativos
 ```
 
 ### TheHarvester (incluye búsqueda multi-motor)
@@ -260,8 +258,7 @@ theharvester -d empresa.com -b google,bing,yandex
 
 ## 🔗 Próximo Paso
 
-Ahora que has dominado la búsqueda en múltiples motores:
-👉 **[03_Busqueda_Brechas_Datos.md](03_Busqueda_Brechas_Datos.md)**
+Ahora que tienes resultados de distintas fuentes, continúa con [análisis de contactos](04_Analisis_Contactos.md) para aprender a corroborarlos.
 
 ---
 

@@ -1,5 +1,11 @@
 ---
 title: "Google Dorks"
+description: "Aprende operadores de búsqueda avanzada para localizar páginas y documentos públicos con consultas precisas y dentro de un alcance autorizado."
+tags:
+  - osint
+  - buscadores
+  - google-dorks
+  - reconocimiento
 ---
 
 # Google Dorks
@@ -193,8 +199,7 @@ inurl:*/admin/backup
 
 ## 🔗 Próximo Paso
 
-👉 Una vez domines Google Dorks, expande tu alcance con:
-**[02_Motores_Busqueda_Alternativos.md](02_Motores_Busqueda_Alternativos.md)**
+👉 Continúa con [buscadores alternativos](02_Motores_Busqueda_Alternativos.md) para contrastar resultados.
 
 ---
 

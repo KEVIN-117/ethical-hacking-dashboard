@@ -1,5 +1,11 @@
 ---
 title: "SOCMINT"
+description: "Organiza la investigación de contenido social público mediante identificación, recopilación, análisis temporal y documentación responsable."
+tags:
+  - osint
+  - socmint
+  - redes-sociales
+  - analisis
 ---
 
 # SOCMINT
@@ -33,12 +39,10 @@ title: "SOCMINT"
 **Técnicas**:
 
 ```
-# SOCMINT
 nombre + ciudad
 nombre + empresa
 nombre + teléfono (si público)
 
-# SOCMINT
 - Foto de perfil
 - Información básica
 - Algunos posts públicos
@@ -86,7 +90,6 @@ python3 osintgram.py
 ```bash
 python3 osintgram.py
 
-# SOCMINT
 target username
 info          # Info básica
 posts         # Descargar posts
@@ -99,13 +102,11 @@ locations     # Ubicaciones
 **Casos OSINT**:
 
 ```
-# SOCMINT
 - Descargar todas las fotos
 - Extraer tags de ubicación
 - Crear mapa de movimientos
 - Identificar patrones
 
-# SOCMINT
 - Ver followers y following
 - Identificar círculo social
 - Encontrar conexiones
@@ -127,26 +128,21 @@ locations     # Ubicaciones
 **Técnicas**:
 
 ```
-# SOCMINT
 site:linkedin.com/in/ "empresa nombre"
 
-# SOCMINT
 "empresa" site:linkedin.com
 
-# SOCMINT
 site:linkedin.com "skill" "empresa"
 ```
 
 **Casos OSINT**:
 
 ```
-# SOCMINT
 - Encontrar todos los empleados
 - Identificar estructura
 - Localizar roles específicos
 - Análisis de rotación
 
-# SOCMINT
 - Cambios de empleo
 - Crecimiento de empresa
 - Nuevas áreas de negocio
@@ -168,27 +164,22 @@ site:linkedin.com "skill" "empresa"
 **Herramientas**:
 
 ```
-# SOCMINT
 from:usuario since:2024-01-01
 until:2024-12-31
 
-# SOCMINT
 near:"ciudad" within:15km
 
-# SOCMINT
 url:dominio.com
 ```
 
 **Casos OSINT**:
 
 ```
-# SOCMINT
 - Patrones de posteo
 - Horarios activos
 - Intereses
 - Conexiones
 
-# SOCMINT
 - Información personal revelada
 - Ubicaciones compartidas
 - Movimientos públicos
@@ -373,8 +364,7 @@ Posteos activos: 22:00-23:00 (actividad nocturna)
 
 ## 🔗 Próximo Paso
 
-Con SOCMINT dominado, automatiza tus investigaciones:
-👉 **[07_Herramientas_Automatizacion.md](07_Herramientas_Automatizacion.md)**
+Tras revisar contenido social, pasa al [análisis de imágenes y metadatos](05_Busqueda_Inversa_Metadatos.md) y trata cada pista como algo que se debe corroborar.
 
 ---
 

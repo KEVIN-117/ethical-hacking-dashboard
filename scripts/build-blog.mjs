@@ -161,7 +161,37 @@ async function shortenCollectionLabels(directory) {
   }
 }
 
+async function normalizeLocalBlogLinks(directory) {
+  if (siteBasePath) return
+
+  const config = await readFile(quartzConfigSource, "utf8")
+  const configuredBase = /^\s*baseUrl:\s*["']?([^"'\s]+)["']?\s*$/m.exec(config)?.[1]
+  if (!configuredBase) return
+
+  const configuredPath = new URL(`https://${configuredBase}`).pathname.replace(/\/$/, "")
+  if (!configuredPath.endsWith("/blog")) return
+  const configuredBlogPath = configuredPath
+  if (configuredBlogPath === "/blog") return
+
+  const textExtensions = new Set([".html", ".json", ".js", ".css", ".xml", ".txt"])
+  async function visit(currentDirectory) {
+    for (const entry of await readdir(currentDirectory, { withFileTypes: true })) {
+      const entryPath = path.join(currentDirectory, entry.name)
+      if (entry.isDirectory()) {
+        await visit(entryPath)
+      } else if (textExtensions.has(path.extname(entry.name).toLowerCase())) {
+        const content = await readFile(entryPath, "utf8")
+        const normalized = content.replaceAll(configuredBlogPath, "/blog")
+        if (normalized !== content) await writeFile(entryPath, normalized, "utf8")
+      }
+    }
+  }
+
+  await visit(directory)
+}
+
 if (buildStatus === 0) {
+  await normalizeLocalBlogLinks(outputDirectory)
   await addQuartzBaseUrls(outputDirectory)
   await addHackerHubBrandImage(outputDirectory)
   await makeRecentNotesCollapsible(outputDirectory)

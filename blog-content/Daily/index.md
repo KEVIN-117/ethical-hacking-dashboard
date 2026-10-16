@@ -1,18 +1,13 @@
 ---
-title: Daily
-description: Notas breves de práctica, hallazgos y aprendizaje en laboratorios autorizados.
+title: "Daily · Notas de campo"
+description: "Bitácora de prácticas autorizadas, hallazgos técnicos y aprendizajes de seguridad ofensiva."
+tags:
+  - daily
+  - notas-de-campo
 ---
 
-# Daily
+# Daily · Notas de campo
 
-Bitácora cronológica de prácticas de seguridad ofensiva, análisis y aprendizajes. Cada entrada documenta el contexto, el método, la evidencia y las medidas defensivas relacionadas.
+Registro cronológico de prácticas, evidencias y aprendizajes en laboratorios propios o autorizados.
 
-> Publica únicamente resultados obtenidos en sistemas propios o dentro de un alcance autorizado. No incluyas credenciales, datos personales ni información que permita acceder a terceros.
-
-## Publicar una nota
-
-1. Crea un archivo Markdown en `blog-content/Daily/` con el formato `AAAA-MM-DD-titulo-breve.md`.
-2. Usa la plantilla `templates/daily-note.md` y completa el título, la fecha, el objetivo y el aprendizaje.
-3. Guarda los cambios y súbelos a la rama `main`. GitHub Actions generará y publicará el sitio.
-
-Las notas publicadas aparecerán en el Explorador y en Recent Notes. Vuelve aquí para acceder a las entradas destacadas.
+Para publicar, copia `templates/daily-note.md` en `blog-content/Daily/`, completa sus campos y sube los cambios a `main`; GitHub Actions publicará la nota. Documenta solo trabajo autorizado y omite credenciales y datos personales.

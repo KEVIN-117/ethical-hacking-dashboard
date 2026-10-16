@@ -58,7 +58,6 @@ function rewriteAsset(reference, resolutionUrl) {
   const resolved = new URL(reference, resolutionUrl)
   if (resolved.origin !== localOrigin) return reference
   if (resolved.pathname.startsWith("/images/")) return `${siteBasePath}${resolved.pathname}${resolved.search}${resolved.hash}`
-  if (resolved.pathname.startsWith("/static/")) return `${blogBasePath}${resolved.pathname}${resolved.search}${resolved.hash}`
 
   const logicalPath = stripBasePath(resolved.pathname)
   if (logicalPath.startsWith("/blog/")) {
@@ -87,13 +86,12 @@ export async function prepareQuartzPages() {
   const pageRoutes = new Map()
   for (const file of pages) {
     const { logicalRoute, canonicalPath } = pageInfo(file)
-    const normalizedRoute = stripBasePath(logicalRoute).replace(/\/$/, "") || "/blog"
-    pageRoutes.set(normalizedRoute, canonicalPath)
+    pageRoutes.set(logicalRoute.replace(/\/$/, "") || "/blog", canonicalPath)
   }
   pageRoutes.set("/blog", `${blogBasePath}/`)
 
   for (const file of pages) {
-    const { isIndex, slug, canonicalPath, resolutionUrl } = pageInfo(file)
+    const { isIndex, slug, logicalRoute, canonicalPath, resolutionUrl } = pageInfo(file)
     const original = await readFile(file, "utf8")
     const updated = await rewriteStaticReferences(original, resolutionUrl, canonicalPath, pageRoutes)
     if (updated !== original) await writeFile(file, updated, "utf8")

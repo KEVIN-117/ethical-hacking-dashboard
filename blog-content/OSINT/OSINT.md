@@ -1,67 +1,51 @@
-- Google Hacking Database
+---
+title: "OSINT · Flujo de investigación"
+description: "Guía breve para planificar, recopilar, validar y comunicar una investigación OSINT de forma autorizada, reproducible y respetuosa de la privacidad."
+tags:
+  - osint
+  - metodologia
+  - workflow
+  - uso-responsable
+---
 
+# Flujo de investigación OSINT
+
+Una investigación útil empieza con una pregunta acotada, no con la recopilación indiscriminada de datos. Este flujo resume cómo avanzar desde el alcance hasta un informe verificable.
+
+## 1. Define el propósito y el alcance
+
+- Especifica la pregunta que quieres responder y por qué.
+- Delimita las personas, dominios, activos o periodos incluidos.
+- Confirma la autorización y las reglas aplicables antes de investigar.
+- Excluye datos sensibles que no sean necesarios para el objetivo.
+
+## 2. Busca en fuentes abiertas
+
+Empieza con búsquedas manuales y registra la consulta, la fuente y la fecha. Los operadores pueden acotar resultados públicos:
+
+```text
+site:ejemplo.org "término de búsqueda"
+filetype:pdf site:ejemplo.org
 ```
-"que quiero buscar" site:donde-lo-quiero-buscar -inurl:que-quiero ignorar
-```
 
-Otros operadores
-- File Type
-```
-filetype:pdf ""
-```
+Usa varios buscadores porque sus índices y resultados pueden diferir. Los resultados de buscadores especializados también deben mantenerse dentro del alcance autorizado.
 
+## 3. Corrobora y relaciona los hallazgos
 
-## Step 2
+Contrasta los datos con fuentes independientes. Para contactos, perfiles sociales, imágenes o avisos de exposición, registra qué fuente respalda cada observación y separa claramente los hechos de las hipótesis. No recopiles ni reutilices contraseñas o credenciales expuestas.
 
-Utilizar motores de búsqueda alternativas a Google
-- Bing
-- Yandex
-- DuckDuckGo
+## 4. Analiza y conserva contexto
 
-## Step 3
-Consulta bases de datos de brechas conocidas.
+Revisa fechas, procedencia, metadatos y posibles cambios en el tiempo. Trata los metadatos y la geolocalización como pistas que requieren validación, no como prueba concluyente. Automatiza solo las tareas permitidas por las fuentes y sus condiciones de uso.
 
-Webs
-- haveibeenpwned.com
-- dehashed.com
-## Step 4
-Análisis de información de contacto:
+## 5. Comunica con cuidado
 
-- okcaller.com
-- claritycheck.com
+Presenta los hallazgos relevantes con sus fuentes, fecha y nivel de confianza. Minimiza datos personales en capturas y reportes; comparte resultados únicamente con quienes tengan necesidad y autorización para recibirlos.
 
-## Paso 5
-Reverse Image Search
+## Recorrido recomendado
 
-- tineye.com
+Para estudiar las técnicas en orden, comienza por la [ruta de aprendizaje OSINT](00_OSINT_Learning_Path.md). Incluye búsquedas avanzadas, buscadores alternativos, contactos, fuentes de brechas, SOCMINT, imágenes y metadatos, automatización, visualización y privacidad.
 
-## Paso 6
-Metadatos
+## Siguiente paso
 
-- Exiftool
-- exifdata.com
-- viewexifdata.com
-Información a recopilar:
-- Geolocalización
-- marca camara
-
-## Paso 7
-Realizar SOCMINT
-- Osintgram -> web para instagram
-- Dantes gate 
-
-## Paso 8
-Automatización OSINT
-
-- Spiderfoot -> reconocimiento pasivo
-- The Harveter -> Recoleccion de informacion
-
-## Paso 9
-Visualización de la información recuperada
-
-- Maltego
-
-# Perspectiva Estratégica
-
-# Defensa y Motigacion
-
+Empieza por la [ruta de aprendizaje OSINT](00_OSINT_Learning_Path.md) y revisa primero los criterios éticos y legales antes de recopilar información.

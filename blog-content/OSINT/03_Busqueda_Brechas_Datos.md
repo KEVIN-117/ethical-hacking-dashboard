@@ -1,5 +1,11 @@
 ---
 title: "Brechas de datos"
+description: "Explica cómo verificar exposición en fuentes de brechas conocidas, limitar el manejo de datos sensibles y documentar hallazgos de forma responsable."
+tags:
+  - osint
+  - brechas-de-datos
+  - privacidad
+  - verificacion
 ---
 
 # Brechas de datos
@@ -44,12 +50,10 @@ Estos datos se vuelcan en bases de datos públicas que los investigadores OSINT 
 **Casos OSINT**:
 
 ```
-# Brechas de datos
 - buscar@empresa.com
 - usuario@empresa.com
 - contacto@empresa.com
 
-# Brechas de datos
 - usuario@gmail.com
 - usuario@yahoo.com
 ```
@@ -57,7 +61,6 @@ Estos datos se vuelcan en bases de datos públicas que los investigadores OSINT 
 **API HIBP**:
 
 ```bash
-# Brechas de datos
 curl https://haveibeenpwned.com/api/v3/breachedaccount/usuario@ejemplo.com
 ```
 
@@ -97,14 +100,11 @@ curl https://haveibeenpwned.com/api/v3/breachedaccount/usuario@ejemplo.com
 **Casos OSINT**:
 
 ```
-# Brechas de datos
 empresa@dominio.com
 
-# Brechas de datos
 admin_usuario
 username_target
 
-# Brechas de datos
 +34-123-456-789
 ```
 
@@ -200,30 +200,24 @@ username_target
 ### 1. Búsqueda por Dominio
 
 ```
-# Brechas de datos
 busca: @empresa.com
 Resultado: todos los emails de esa empresa en brechas
 
-# Brechas de datos
 múltiples búsquedas para cada empleado
 ```
 
 ### 2. Búsqueda Inversa
 
 ```
-# Brechas de datos
 busca en DeHashed: "contraseña123"
 
-# Brechas de datos
 ```
 
 ### 3. Análisis de Patrones
 
 ```
-# Brechas de datos
 Patrón: empresa + año = empresa2024
 
-# Brechas de datos
 usuario@gmail.com, usuario@yahoo.com, usuario.apellido@empresa.com
 ```
 
@@ -307,8 +301,7 @@ for email in emails:
 
 ## 🔗 Próximo Paso
 
-Una vez domines la búsqueda de brechas:
-👉 **[04_Analisis_Contactos.md](04_Analisis_Contactos.md)**
+Después de revisar exposición en fuentes de brechas, pasa a [SOCMINT](06_SOCMINT_Redes_Sociales.md) para analizar contenido social público.
 
 ---
 

@@ -1,3 +1,12 @@
+---
+title: "Kerberos · Créditos y derechos de autor"
+description: "Datos bibliográficos y créditos de la edición de Kerberos: la guía definitiva."
+tags:
+  - kerberos
+  - bibliografia
+  - derechos-de-autor
+---
+
 # Kerberos: La guía definitiva
 
 ### Jason Garman

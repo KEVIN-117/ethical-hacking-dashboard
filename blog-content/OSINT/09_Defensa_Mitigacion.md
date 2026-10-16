@@ -1,5 +1,11 @@
 ---
 title: "Privacidad y defensa OSINT"
+description: "Audita tu huella digital y aplica medidas para reducir la exposición de cuentas, contactos, imágenes y metadatos personales."
+tags:
+  - osint
+  - privacidad
+  - opsec
+  - defensa
 ---
 
 # Privacidad y defensa OSINT
@@ -155,11 +161,8 @@ Settings → Location → Turn off location history
 #### Remover EXIF de fotos antes de compartir
 
 ```bash
-# Privacidad y defensa OSINT
 exiftool -all= -overwrite_original foto.jpg
 
-# Privacidad y defensa OSINT
-# Privacidad y defensa OSINT
 ```
 
 #### Configurar cámara para no guardar datos
@@ -394,8 +397,7 @@ MONITOREO:
 
 ## 🔗 Próximo Paso
 
-Entender los aspectos éticos y legales de tu investigación:
-👉 **[10_Etica_Legal_OSINT.md](10_Etica_Legal_OSINT.md)**
+La responsabilidad debe acompañar todo el recorrido. Vuelve a [ética y marco legal](10_Etica_Legal_OSINT.md) para revisar los criterios antes de compartir resultados.
 
 ---
 

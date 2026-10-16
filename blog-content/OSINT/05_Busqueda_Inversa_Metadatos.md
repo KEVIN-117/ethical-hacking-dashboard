@@ -1,5 +1,11 @@
 ---
 title: "Imágenes y metadatos"
+description: "Guía de búsqueda inversa de imágenes y análisis EXIF para evaluar procedencia, contexto y posibles pistas geográficas."
+tags:
+  - osint
+  - imagenes
+  - metadatos
+  - geolocalizacion
 ---
 
 # Imágenes y metadatos
@@ -42,17 +48,14 @@ Las imágenes contienen información valiosa:
 **Casos OSINT**:
 
 ```
-# Imágenes y metadatos
 - Foto de perfil en múltiples plataformas
 - Busca dónde más aparece esa foto
 - Identifica cuentas falsas
 
-# Imágenes y metadatos
 - Búsqueda inversa de foto editada
 - Compara con original
 - Identifica diferencias
 
-# Imágenes y metadatos
 - Información de dónde fue publicada
 - Contexto de uso
 - Posibles conexiones
@@ -121,42 +124,31 @@ Software:      Adobe Lightroom
 **Instalación**:
 
 ```bash
-# Imágenes y metadatos
 brew install exiftool
 
-# Imágenes y metadatos
-# Imágenes y metadatos
 ```
 
 **Uso básico**:
 
 ```bash
-# Imágenes y metadatos
 exiftool imagen.jpg
 
-# Imágenes y metadatos
 exiftool -GPS* imagen.jpg
 
-# Imágenes y metadatos
 exiftool -Make -Model -LensModel imagen.jpg
 
-# Imágenes y metadatos
 exiftool -json imagen.jpg > metadata.json
 
-# Imágenes y metadatos
 exiftool *.jpg > todo_metadata.txt
 
-# Imágenes y metadatos
 exiftool -all= -overwrite_original imagen.jpg
 ```
 
 **Casos OSINT**:
 
 ```bash
-# Imágenes y metadatos
 exiftool foto_sospechosa.jpg
 
-# Imágenes y metadatos
 for archivo in descargas/*.jpg; do
   echo "=== $archivo ==="
   exiftool "$archivo" | grep -E "GPS|Date|Model"
@@ -323,8 +315,7 @@ Investigación: Mapear movimiento de persona
 
 ## 🔗 Próximo Paso
 
-Con análisis de imágenes dominado, investiga las redes sociales:
-👉 **[06_SOCMINT_Redes_Sociales.md](06_SOCMINT_Redes_Sociales.md)**
+Después de revisar imágenes y metadatos, continúa con [automatización OSINT](07_Herramientas_Automatizacion.md) para conocer cuándo y cómo automatizar tareas repetitivas.
 
 ---
 

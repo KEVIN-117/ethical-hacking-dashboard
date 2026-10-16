@@ -1,5 +1,11 @@
 ---
 title: "Análisis de contactos"
+description: "Métodos para validar correos y teléfonos y relacionar datos de contacto usando fuentes abiertas y corroboración cuidadosa."
+tags:
+  - osint
+  - contactos
+  - correlacion
+  - verificacion
 ---
 
 # Análisis de contactos
@@ -49,12 +55,10 @@ La información de contacto es crítica en OSINT porque:
 **Casos OSINT**:
 
 ```
-# Análisis de contactos
 - Número de contacto de empresa
 - Número personal asociado a email
 - Número en perfil de LinkedIn
 
-# Análisis de contactos
 - Nombre completo
 - Ubicación
 - Historial de cambios
@@ -94,12 +98,10 @@ La información de contacto es crítica en OSINT porque:
 **Casos OSINT**:
 
 ```
-# Análisis de contactos
 - ¿Trabaja actualmente aquí?
 - ¿Cuál es su número correcto?
 - ¿Tiene múltiples números?
 
-# Análisis de contactos
 - Empleos anteriores
 - Ubicaciones confirmadas
 - Redes de contactos
@@ -129,12 +131,10 @@ La información de contacto es crítica en OSINT porque:
 **Casos OSINT**:
 
 ```
-# Análisis de contactos
 - Números en correos comprometidos
 - Números en redes sociales
 - Números en documentos públicos
 
-# Análisis de contactos
 - Verifica si el número es activo
 - Identifica propietario actual
 - Detecta cambios de titular
@@ -159,16 +159,13 @@ La información de contacto es crítica en OSINT porque:
 **Casos OSINT**:
 
 ```
-# Análisis de contactos
 - Encuentra propietario del número
 - Historial de direcciones
 - Familiares conocidos
 
-# Análisis de contactos
 - Valida propiedad de email
 - Encuentra información asociada
 
-# Análisis de contactos
 - Localiza a personas
 - Múltiples direcciones
 - Información de empleadores
@@ -246,11 +243,9 @@ Email conocido
 ### 2. Validación Cruzada
 
 ```
-# Análisis de contactos
 - nombre@empresa.com
 - Teléfono: +34 612 345 678
 
-# Análisis de contactos
 1. OkCaller: ¿El número pertenece a esa persona?
 2. HIBP: ¿Está ese email en brechas?
 3. LinkedIn: ¿El nombre coincide con perfil?
@@ -260,7 +255,6 @@ Email conocido
 ### 3. Análisis de Patrones de Teléfono
 
 ```
-# Análisis de contactos
 - Empleado 1: +34 612 345 xxx
 - Empleado 2: +34 612 345 yyy
 - Empleado 3: +34 612 346 zzz
@@ -271,7 +265,6 @@ Email conocido
 ### 4. Histórico de Cambios
 
 ```
-# Análisis de contactos
 2022: Número A para usuario X
 2023: Número B para usuario X
 2024: Número C para usuario X
@@ -320,8 +313,7 @@ Email conocido
 
 ## 🔗 Próximo Paso
 
-Después de validar contactos, explora la información multimedia:
-👉 **[05_Busqueda_Inversa_Metadatos.md](05_Busqueda_Inversa_Metadatos.md)**
+Después de validar contactos, consulta [fuentes de brechas](03_Busqueda_Brechas_Datos.md) para revisar exposición con cuidado y sin manejar credenciales.
 
 ---
 

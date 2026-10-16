@@ -1,5 +1,11 @@
 ---
 title: "Automatización OSINT"
+description: "Presenta herramientas y flujos para automatizar la recopilación y correlación de fuentes abiertas con límites claros y revisión humana."
+tags:
+  - osint
+  - automatizacion
+  - herramientas
+  - reconocimiento
 ---
 
 # Automatización OSINT
@@ -51,13 +57,11 @@ Target: empresa.com
 **Instalación**:
 
 ```bash
-# Automatización OSINT
 git clone https://github.com/smicallef/spiderfoot.git
 cd spiderfoot
 pip install -r requirements.txt
 python3 sf.py -l 127.0.0.1:5001
 
-# Automatización OSINT
 ```
 
 **Uso básico**:
@@ -117,16 +121,12 @@ pip install theHarvester
 **Uso básico**:
 
 ```bash
-# Automatización OSINT
 theHarvester -d empresa.com -b google
 
-# Automatización OSINT
 theHarvester -d empresa.com -b google,bing,linkedin,baidu
 
-# Automatización OSINT
 theHarvester -d empresa.com -b google,bing -l 500
 
-# Automatización OSINT
 theHarvester -d empresa.com -b google -f reporte.html
 ```
 
@@ -148,16 +148,12 @@ theHarvester -d empresa.com -b google -f reporte.html
 **Ejemplos prácticos**:
 
 ```bash
-# Automatización OSINT
 theHarvester -d empresa.com -b all
 
-# Automatización OSINT
 theHarvester -d empresa.com -b crt
 
-# Automatización OSINT
 theHarvester -d empresa.com -b github
 
-# Automatización OSINT
 theHarvester -d empresa.com -b google,bing -f reporte
 ```
 
@@ -305,17 +301,13 @@ DOMAIN=$1
 
 echo "[*] Iniciando análisis de $DOMAIN"
 
-# Automatización OSINT
 echo "[+] Resolución DNS..."
 nslookup $DOMAIN
 
-# Automatización OSINT
 echo "[+] Buscando con TheHarvester..."
 theHarvester -d $DOMAIN -b google,bing,linkedin -f report_harvester
 
-# Automatización OSINT
 echo "[+] SpiderFoot..."
-# Automatización OSINT
 
 echo "[✓] Análisis completado"
 ```
@@ -362,8 +354,7 @@ echo "[✓] Análisis completado"
 
 ## 🔗 Próximo Paso
 
-Después de automatizar, visualiza los resultados:
-👉 **[08_Visualizacion_Datos.md](08_Visualizacion_Datos.md)**
+Después de recopilar y correlacionar información, organiza los hallazgos con [visualización OSINT](08_Visualizacion_Datos.md).
 
 ---
 

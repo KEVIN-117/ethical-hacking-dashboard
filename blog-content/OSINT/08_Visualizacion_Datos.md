@@ -1,5 +1,11 @@
 ---
 title: "Visualización OSINT"
+description: "Convierte datos recopilados en grafos, cronologías y reportes que muestran relaciones, contexto, fuentes y nivel de confianza."
+tags:
+  - osint
+  - visualizacion
+  - analisis-de-redes
+  - reporting
 ---
 
 # Visualización OSINT
@@ -151,12 +157,10 @@ IP → Puertos abiertos → Servicios → Vulnerabilidades
 **Casos OSINT**:
 
 ```
-# Visualización OSINT
 MATCH (p:Persona)-[:CONOCE]->(p2:Persona)
 WHERE p.nombre = "Target"
 RETURN p, p2
 
-# Visualización OSINT
 MATCH path = (a:Persona)-[*]-(b:Persona)
 WHERE a.nombre = "A" AND b.nombre = "B"
 RETURN path
@@ -359,8 +363,7 @@ Mapa con colores indicando:
 
 ## 🔗 Próximo Paso
 
-Con la visualización completa, protege tu propia información:
-👉 **[09_Defensa_Mitigacion.md](09_Defensa_Mitigacion.md)**
+Al terminar, aplica la [guía de privacidad y defensa](09_Defensa_Mitigacion.md) para revisar tu propia huella digital.
 
 ---
 
