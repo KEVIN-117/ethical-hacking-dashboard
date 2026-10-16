@@ -1,6 +1,7 @@
 ---
 title: "Automatización de seguridad con C#"
 sticker: lucide//file-text
+cover: "/images/article-headers/header-csharp-automation.webp"
 ---## **Resumen Ejecutivo**
 
 El presente informe técnico ofrece un análisis exhaustivo, crítico y práctico de la obra "`Gray Hat C#: A Hacker's Guide to Creating and Automating Security Tools`" de Brandon Perry.1 En el contexto actual de la ciberseguridad, donde la velocidad de respuesta y la adaptabilidad son críticas, la capacidad de desarrollar herramientas personalizadas trasciende la mera habilidad técnica para convertirse en una necesidad operativa. Este documento desglosa los catorce capítulos del libro, diseccionando la arquitectura de código, los fundamentos teóricos subyacentes y las implicaciones de seguridad de cada herramienta desarrollada.

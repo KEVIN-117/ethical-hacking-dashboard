@@ -2,6 +2,7 @@
 title: "Seguridad de Active Directory"
 sticker: lucide//file-text
 banner: assets/ether-bg.jpeg
+cover: "/images/article-headers/header-active-directory.webp"
 ---## **Introducción: La Columna Vertebral de la Identidad Empresarial**
 
 En el panorama actual de la infraestructura tecnológica, los Servicios de Dominio de Active Directory (AD DS) de Microsoft se han consolidado como el estándar de facto para la gestión de identidades y accesos en entornos corporativos. Según reportes recientes, más del 90% de las empresas del Fortune 1000 dependen de esta tecnología para orquestar la autenticación de usuarios y la autorización de recursos.1 Active Directory no debe conceptualizarse meramente como una base de datos de usuarios o un directorio telefónico digital; en su lugar, funciona como un sistema operativo distribuido y jerárquico que gestiona las políticas de seguridad, la replicación de datos críticos y la interconexión lógica de los activos de una organización.2

@@ -6,6 +6,7 @@ tags:
   - buscadores
   - reconocimiento
   - fuentes-abiertas
+cover: "/images/article-headers/header-osint-engines.webp"
 ---
 
 # Buscadores alternativos

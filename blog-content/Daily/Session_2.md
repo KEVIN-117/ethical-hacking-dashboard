@@ -7,6 +7,7 @@ tags:
   - linux
   - redes
 sticker: emoji//1f4d0
+cover: "/images/article-headers/header-daily-session-2.webp"
 ---
 
 ## Sesión 2 — Jueves 15 de octubre

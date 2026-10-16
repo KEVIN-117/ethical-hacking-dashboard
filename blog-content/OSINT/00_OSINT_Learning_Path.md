@@ -6,6 +6,7 @@ tags:
   - ruta-de-aprendizaje
   - metodologia
   - uso-responsable
+cover: "/images/article-headers/header-osint-path.webp"
 ---
 
 # Ruta OSINT

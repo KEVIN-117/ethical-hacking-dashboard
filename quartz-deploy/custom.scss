@@ -19,6 +19,10 @@
   --hh-surface-raised: rgba(255, 255, 255, 0.9);
   --hh-edge: rgba(44, 86, 106, 0.16);
   --hh-focus: #006d77;
+  --hh-hero-overlay-start: rgba(237, 244, 247, 0.76);
+  --hh-hero-overlay-mid: rgba(237, 244, 247, 0.5);
+  --hh-hero-overlay-end: rgba(237, 244, 247, 0.18);
+  --hh-hero-vignette: rgba(20, 39, 51, 0.12);
   color-scheme: light;
 }
 
@@ -39,6 +43,10 @@
   --hh-surface-raised: rgba(17, 36, 55, 0.86);
   --hh-edge: rgba(143, 185, 213, 0.2);
   --hh-focus: #c4fb7b;
+  --hh-hero-overlay-start: rgba(4, 12, 22, 0.68);
+  --hh-hero-overlay-mid: rgba(4, 12, 22, 0.38);
+  --hh-hero-overlay-end: rgba(4, 12, 22, 0.12);
+  --hh-hero-vignette: rgba(4, 12, 22, 0.2);
   color-scheme: dark;
 }
 
@@ -266,22 +274,24 @@ article a.external:hover {
 }
 
 .center > .page-header .popover-hint::before {
-    background-image: url("../images/hackerhub-red-team-mascot.png");
-    background-position: center 42%;
+  background-image: var(--article-header-image, url("../images/article-headers/header-home.webp"));
+  background-position: center 42%;
   background-repeat: no-repeat;
   background-size: cover;
-    filter: blur(8px) saturate(1.2);
-    opacity: 0.62;
-  transform: scale(1.045);
+  filter: saturate(1.08) contrast(1.04);
+  opacity: 0.94;
+  transform: scale(1.012);
 }
 
 .center > .page-header .popover-hint::after {
-  background: linear-gradient(
-    105deg,
-      color-mix(in srgb, var(--light) 78%, transparent) 0%,
-      color-mix(in srgb, var(--light) 62%, transparent) 58%,
-      color-mix(in srgb, var(--light) 48%, transparent) 100%
-  );
+  background:
+    linear-gradient(0deg, var(--hh-hero-vignette), transparent 68%),
+    linear-gradient(
+      100deg,
+      var(--hh-hero-overlay-start) 0%,
+      var(--hh-hero-overlay-mid) 47%,
+      var(--hh-hero-overlay-end) 100%
+    );
 }
 
 .center > .page-header .popover-hint > * {

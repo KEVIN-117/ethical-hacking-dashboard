@@ -1,5 +1,6 @@
 ---
 title: "Windows Kernel"
+cover: "/images/article-headers/header-re-kernel.webp"
 ---
 
 This chapter discusses the principles and techniques necessary for analyzing kernel-mode driver code, such as rootkits, on the Windows platform. Because drivers interact with the OS through well-defined interfaces, the analytical task can be decomposed into the following general objectives:

@@ -7,6 +7,7 @@ tags:
   - linux
   - fundamentos
 sticker: emoji//1f4d0
+cover: "/images/article-headers/header-daily-session-1.webp"
 ---
 
 Ya quedó programado, con **prioridad en HTB** y TryHackMe como complemento:

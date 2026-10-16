@@ -1,5 +1,6 @@
 ---
 title: "Firmas de archivo"
+cover: "/images/article-headers/header-file-signatures.webp"
 ---
 
 ## 1. Tabla forense de firmas y offsets

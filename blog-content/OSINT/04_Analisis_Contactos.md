@@ -6,6 +6,7 @@ tags:
   - contactos
   - correlacion
   - verificacion
+cover: "/images/article-headers/header-osint-contacts.webp"
 ---
 
 # Análisis de contactos

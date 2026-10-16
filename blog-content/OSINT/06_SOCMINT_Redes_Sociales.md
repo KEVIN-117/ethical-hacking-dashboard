@@ -6,6 +6,7 @@ tags:
   - socmint
   - redes-sociales
   - analisis
+cover: "/images/article-headers/header-osint-socmint.webp"
 ---
 
 # SOCMINT

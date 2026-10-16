@@ -1,5 +1,6 @@
 ---
 title: "Ofuscación"
+cover: "/images/article-headers/header-re-obfuscation.webp"
 ---
 
 Reverse engineering compiler-generated code is a difficult and time-consuming process. The situation gets even worse when the code has been hardened, deliberately constructed to resist analysis. We refer to such techniques for hardening programs under the general umbrella of _obfuscation_. Some examples of situations in which obfuscation might be applied are as follows:

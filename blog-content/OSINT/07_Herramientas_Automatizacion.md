@@ -6,6 +6,7 @@ tags:
   - automatizacion
   - herramientas
   - reconocimiento
+cover: "/images/article-headers/header-osint-automation.webp"
 ---
 
 # Automatización OSINT

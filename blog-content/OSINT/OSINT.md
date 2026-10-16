@@ -6,6 +6,7 @@ tags:
   - metodologia
   - workflow
   - uso-responsable
+cover: "/images/article-headers/header-osint-index.webp"
 ---
 
 # Flujo de investigación OSINT

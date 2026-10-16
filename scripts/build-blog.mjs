@@ -87,6 +87,66 @@ async function addHackerHubBrandImage(directory) {
   }
 }
 
+async function addArticleHeaderImages(directory) {
+  const articles = new Map()
+
+  async function collectMarkdown(currentDirectory) {
+    for (const entry of await readdir(currentDirectory, { withFileTypes: true })) {
+      const entryPath = path.join(currentDirectory, entry.name)
+      if (entry.isDirectory()) {
+        await collectMarkdown(entryPath)
+        continue
+      }
+      if (path.extname(entry.name).toLowerCase() !== ".md") continue
+
+      const markdown = await readFile(entryPath, "utf8")
+      const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---/.exec(markdown)?.[1]
+      if (!frontmatter) continue
+      const titleValue = /^title:\s*(?:"([^"]*)"|'([^']*)'|(.*))\s*$/m.exec(frontmatter)
+      const coverValue = /^cover:\s*(?:"([^"]*)"|'([^']*)'|(.*))\s*$/m.exec(frontmatter)
+      const title = (titleValue?.[1] ?? titleValue?.[2] ?? titleValue?.[3])?.trim()
+      const cover = (coverValue?.[1] ?? coverValue?.[2] ?? coverValue?.[3])?.trim()
+      if (title && cover) articles.set(title, cover)
+    }
+  }
+
+  await collectMarkdown(contentDirectory)
+
+  function decodeHtml(value) {
+    return value
+      .replaceAll("&amp;", "&")
+      .replaceAll("&quot;", '"')
+      .replaceAll("&#39;", "'")
+      .replaceAll("&lt;", "<")
+      .replaceAll("&gt;", ">")
+  }
+
+  async function updatePages(currentDirectory) {
+    for (const entry of await readdir(currentDirectory, { withFileTypes: true })) {
+      const entryPath = path.join(currentDirectory, entry.name)
+      if (entry.isDirectory()) {
+        await updatePages(entryPath)
+        continue
+      }
+      if (path.extname(entry.name).toLowerCase() !== ".html") continue
+
+      const html = await readFile(entryPath, "utf8")
+      const title = decodeHtml(/<h1 class="article-title">([\s\S]*?)<\/h1>/i.exec(html)?.[1] ?? "")
+      const cover = articles.get(title)
+      if (!cover) continue
+
+      const imageUrl = `${siteBasePath}${cover.startsWith("/") ? cover : `/${cover}`}`
+      const updatedHtml = html.replace(
+        /(<div class="page-header"><div class="popover-hint")(?:\s+style="[^"]*")?/i,
+        `$1 style="--article-header-image: url('${imageUrl}')"`,
+      )
+      if (updatedHtml !== html) await writeFile(entryPath, updatedHtml, "utf8")
+    }
+  }
+
+  await updatePages(directory)
+}
+
 async function makeRecentNotesCollapsible(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const entryPath = path.join(directory, entry.name)
@@ -194,6 +254,7 @@ if (buildStatus === 0) {
   await normalizeLocalBlogLinks(outputDirectory)
   await addQuartzBaseUrls(outputDirectory)
   await addHackerHubBrandImage(outputDirectory)
+  await addArticleHeaderImages(outputDirectory)
   await makeRecentNotesCollapsible(outputDirectory)
   await shortenCollectionLabels(outputDirectory)
   await prepareQuartzPages()

@@ -1,5 +1,6 @@
 ---
 title: "Depuración y automatización"
+cover: "/images/article-headers/header-re-debug.webp"
 ---
 
 Debuggers are programs that leverage support from the processor and operating system to enable tracing of other programs so that one can discover bugs or simply understand the logic of the debugged program. Debuggers are an essential tool for reverse engineers because, unlike disassemblers, they allow runtime inspection of the program's state.

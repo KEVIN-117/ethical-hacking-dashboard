@@ -6,6 +6,7 @@ tags:
   - privacidad
   - opsec
   - defensa
+cover: "/images/article-headers/header-osint-defense.webp"
 ---
 
 # Privacidad y defensa OSINT

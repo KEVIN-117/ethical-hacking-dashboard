@@ -6,6 +6,7 @@ tags:
   - visualizacion
   - analisis-de-redes
   - reporting
+cover: "/images/article-headers/header-osint-visualization.webp"
 ---
 
 # Visualización OSINT

@@ -6,6 +6,7 @@ tags:
   - imagenes
   - metadatos
   - geolocalizacion
+cover: "/images/article-headers/header-osint-images.webp"
 ---
 
 # Imágenes y metadatos

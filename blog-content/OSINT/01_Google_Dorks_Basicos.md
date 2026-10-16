@@ -6,6 +6,7 @@ tags:
   - buscadores
   - google-dorks
   - reconocimiento
+cover: "/images/article-headers/header-osint-google.webp"
 ---
 
 # Google Dorks

@@ -1,6 +1,7 @@
 ---
 title: Bitácora Red Team
 description: Notas técnicas para aprender pentesting autorizado, investigación y seguridad ofensiva responsable.
+cover: "/images/article-headers/header-home.webp"
 ---
 
 # Bitácora Red Team

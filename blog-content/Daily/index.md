@@ -4,6 +4,7 @@ description: "Bitácora de prácticas autorizadas, hallazgos técnicos y aprendi
 tags:
   - daily
   - notas-de-campo
+cover: "/images/article-headers/header-daily-index.webp"
 ---
 
 # Daily · Notas de campo

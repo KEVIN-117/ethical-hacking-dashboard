@@ -6,6 +6,7 @@ tags:
   - etica
   - legal
   - uso-responsable
+cover: "/images/article-headers/header-osint-ethics.webp"
 ---
 
 # Ética en OSINT

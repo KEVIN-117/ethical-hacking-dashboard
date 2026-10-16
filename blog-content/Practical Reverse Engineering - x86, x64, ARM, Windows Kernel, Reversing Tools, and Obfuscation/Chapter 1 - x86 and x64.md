@@ -1,5 +1,6 @@
 ---
 title: "x86 y x64"
+cover: "/images/article-headers/header-re-x86.webp"
 ---
 
 The x86 is little-endian architecture based on the Intel 8086 processor. For the purpose of our chapter, x86 is the 32-bit implementation of the Intel architecture (IA-32) as defined in the _Intel Software Development Manual_. Generally speaking, it can operate in two modes: _real_ and _protected_. Real mode is the processor state when it is first powered on and only supports a 16-bit instruction set. Protected mode is the processor state supporting virtual memory, paging, and other features; it is the state in which modern operating systems execute. The 64-bit extension of the architecture is called x64 or x86-64. This chapter discusses the x86 architecture operating in protected mode.

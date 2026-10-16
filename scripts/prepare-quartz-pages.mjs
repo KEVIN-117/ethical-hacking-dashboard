@@ -70,6 +70,10 @@ function rewriteAsset(reference, resolutionUrl) {
 async function rewriteStaticReferences(html, resolutionUrl, canonicalPath, pageRoutes) {
   html = html.replace(/<base\b[^>]*>/gi, "")
   html = html.replace("<head>", `<head><base href="${canonicalPath}">`)
+  html = html.replace(
+    /fetch\((["'])(?:\.\.?\/)*static\/contentIndex\.json\1\)/g,
+    `fetch("${blogBasePath}/static/contentIndex.json")`,
+  )
   html = html.replace(/<a\b[^>]*>/gi, (tag) =>
     tag.replace(/\bhref="([^"]*)"/i, (_, href) => `href="${rewriteAnchor(href, resolutionUrl, pageRoutes)}"`),
   )

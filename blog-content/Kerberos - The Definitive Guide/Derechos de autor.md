@@ -5,6 +5,7 @@ tags:
   - kerberos
   - bibliografia
   - derechos-de-autor
+cover: "/images/article-headers/header-kerberos-credits.webp"
 ---
 
 # Kerberos: La guía definitiva

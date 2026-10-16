@@ -6,6 +6,7 @@ tags:
   - brechas-de-datos
   - privacidad
   - verificacion
+cover: "/images/article-headers/header-osint-breaches.webp"
 ---
 
 # Brechas de datos
