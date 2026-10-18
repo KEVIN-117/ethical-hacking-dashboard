@@ -1,5 +1,5 @@
 ---
-title: "Linux: observación y documentación"
+title: "1. Linux: observación y documentación"
 date: 2026-10-13
 description: "Fundamentos de Linux para identificar el entorno, navegar archivos y permisos, y registrar evidencias en un laboratorio local autorizado."
 tags:

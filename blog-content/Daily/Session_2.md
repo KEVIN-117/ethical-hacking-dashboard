@@ -1,5 +1,5 @@
 ---
-title: "Procesos, IP y puertos en Linux"
+title: "2. Procesos, IP y puertos en Linux"
 date: 2026-10-15
 description: "Relaciona procesos, sockets y respuestas HTTP con una práctica de servicio local, limitada a loopback y con alcance autorizado."
 tags:
@@ -11,6 +11,7 @@ cover: "/images/article-headers/header-daily-session-2.webp"
 ---
 
 ## Sesión 2 — Jueves 15 de octubre
+
 ### Del archivo al servicio: procesos, IP y puertos
 
 Hoy relacionarás lo visto sobre Linux con una pregunta básica de enumeración: **¿qué programa está atendiendo conexiones y qué evidencia lo demuestra?**
@@ -21,7 +22,7 @@ Como aún no has confirmado avances, mantenemos el nivel inicial. No necesitas e
 
 ### Recursos y preparación
 
-Recurso principal: [HTB Academy — Linux Fundamentals](https://academy.hackthebox.com/course/preview/linux-fundamentals). Selecciona *Service and Process Management*, *Network Services* y *Working with Web Services*. Son secciones del temario oficial; no hace falta completar hoy todo el módulo. [HTB Academy](https://academy.hackthebox.com/course/preview/linux-fundamentals?utm_source=chatgpt.com)
+Recurso principal: [HTB Academy — Linux Fundamentals](https://academy.hackthebox.com/course/preview/linux-fundamentals). Selecciona _Service and Process Management_, _Network Services_ y _Working with Web Services_. Son secciones del temario oficial; no hace falta completar hoy todo el módulo. [HTB Academy](https://academy.hackthebox.com/course/preview/linux-fundamentals?utm_source=chatgpt.com)
 
 Como referencia de redes utiliza [HTB Academy — Introduction to Networking](https://academy.hackthebox.com/course/preview/introduction-to-networking). Consulta únicamente los conceptos de IP y conexiones TCP/UDP que necesites para esta práctica. [HTB Academy](https://academy.hackthebox.com/course/preview/introduction-to-networking?utm_source=chatgpt.com)
 
@@ -37,13 +38,13 @@ command -v ss
 
 ### Plan de estudio
 
-| Bloque | Tiempo | Resultado esperado |
-|---|---:|---|
-| Repaso de rutas y permisos | 10 min | Explicar `pwd`, `ls -la` y `600` |
-| Lectura de HTB | 25 min | Distinguir proceso, servicio y puerto |
-| Laboratorio guiado | 40 min | Observar el servicio desde servidor y cliente |
-| Investigación autónoma | 25 min | Reunir evidencias y justificar conclusiones |
-| Cierre | 10 min | Comprobar comprensión |
+| Bloque                     | Tiempo | Resultado esperado                            |
+| -------------------------- | -----: | --------------------------------------------- |
+| Repaso de rutas y permisos | 10 min | Explicar `pwd`, `ls -la` y `600`              |
+| Lectura de HTB             | 25 min | Distinguir proceso, servicio y puerto         |
+| Laboratorio guiado         | 40 min | Observar el servicio desde servidor y cliente |
+| Investigación autónoma     | 25 min | Reunir evidencias y justificar conclusiones   |
+| Cierre                     | 10 min | Comprobar comprensión                         |
 
 Si el repaso inicial cuesta, dedica parte de la lectura a recuperar esos fundamentos; no necesitas acelerar.
 
